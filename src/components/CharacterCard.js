@@ -1,23 +1,20 @@
 import React from "react";
-import { Card, CardText, CardBody, CardTitle, CardHeader} from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, CardHeader, CardImg} from 'reactstrap';
 
 export default function CharacterCard(props) {
   return <span> 
     <Card body outline color="danger" body width="30%" >
     <CardBody>
     <CardHeader tag="h3">
-    <CardTitle>{props.name}</CardTitle>
+    <CardTitle>{props.character.name}</CardTitle>
     </CardHeader>
-    <CardText>
-      <p>Birth Year: {props.age} </p>
-      <p>Home World: {props.homeworld} </p>
-      <p>Gender: {props.gender} </p>
-      <p>Height: {props.height} </p>
-      <p>Mass: {props.mass} </p>
-      <p>Hair-Color: {props.hair} </p>
-      <p>Eye-Color: {props.eye} </p>
-      <p>Skin-Color: {props.skin} </p>
-    </CardText>
+    <CardImg src={props.character.image}></CardImg>
+    <CardText>Status: {props.character.status}</CardText>
+    <CardText>Origin: {props.character.origin.name}</CardText>
+    <CardText>Current Location: {props.character.location.name}</CardText>
+    <CardText>Species: {props.character.species}</CardText>
+    <CardText>Type: {props.character.type}</CardText>
+    <CardText>Gender: {props.character.gender}</CardText>
   </CardBody>
 </Card></span>;
 }
